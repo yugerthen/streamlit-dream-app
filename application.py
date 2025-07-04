@@ -62,13 +62,13 @@ if texte_reve.strip():
     st.subheader("Texte du rêve")
     st.write(texte_reve)
 
-    if st.button("Générer l’image"):
+    if st.button("🖼️ Générer l’image"):
         with st.spinner("Création de l’image..."):
             img_bytes = generate_image(texte_reve)
         if img_bytes:
             st.image(img_bytes, caption="Image générée", use_column_width=True)
 
-    if st.button("Analyser l’émotion"):
+    if st.button("🧠 Analyser l’émotion"):
         emotion, score, details = detect_emotion(texte_reve)
         st.markdown(f"**Émotion dominante : `{emotion}`** (score : `{score:.2f}`)")
         st.markdown("Détails des scores :")
@@ -78,7 +78,7 @@ if texte_reve.strip():
     if "historique" not in st.session_state:
         st.session_state["historique"] = []
 
-    if st.button("Sauvegarder ce rêve"):
+    if st.button("💾 Sauvegarder ce rêve"):
         st.session_state["historique"].append(texte_reve)
         st.success("Rêve sauvegardé.")
 
