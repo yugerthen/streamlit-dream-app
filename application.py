@@ -7,7 +7,7 @@ from transformers import pipeline
 # Charge le fichier .env
 load_dotenv()
 
-CLIPDROP_API_KEY = os.getenv("CLIPDROP_API_KEY")
+CLIPDROP_API_KEY = st.secrets["CLIPDROP_API_KEY"]
 
 if not CLIPDROP_API_KEY:
     st.error("La clé API n'a pas été trouvée. Vérifiez votre fichier .env.")
